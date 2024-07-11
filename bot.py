@@ -29,12 +29,25 @@ class Bot:
             Checkpoint(longitude=-29.908577, latitude=17.999811, radius=50),
             Checkpoint(latitude=-11.441808, longitude=-29.660252, radius=50),
             Checkpoint(longitude=-63.240264, latitude=-61.025125, radius=50),
-            Checkpoint(latitude=2.806318, longitude=-168.943864, radius=1990.0),
-            Checkpoint(latitude=-62.052286, longitude=169.214572, radius=50.0),
+            Checkpoint(latitude=2.806318, longitude=-168.943864, radius=1990.0), #medio pacifico
+            #Checkpoint(latitude=-62.052286, longitude=169.214572, radius=50.0),
+            Checkpoint(latitude=-30.554692, longitude=169.897996, radius=50.0),#entre new zeland y au 1
+            Checkpoint(latitude=-46.522587, longitude=150.333942, radius=50.0),#entre new zeland y au 1
             Checkpoint(latitude=-15.668984, longitude=77.674694, radius=1190.0),
-            Checkpoint(latitude=-39.438937, longitude=19.836265, radius=50.0),
-            Checkpoint(latitude=14.881699, longitude=-21.024326, radius=50.0),
-            Checkpoint(latitude=44.076538, longitude=-18.292936, radius=50.0),
+            Checkpoint(latitude=8.465130, longitude=58.359375, radius=20.0),
+            Checkpoint(latitude=14.539278, longitude=54.250488, radius=10.0),
+            Checkpoint(latitude=11.808570, longitude=44.230957, radius=10.0),
+            Checkpoint(latitude=12.594193, longitude=43.372650, radius=10.0),
+            Checkpoint(latitude=13.612443, longitude=42.506104, radius=10.0),
+            Checkpoint(latitude=25.705723, longitude=35.496826, radius=10.0),
+            Checkpoint(latitude=27.563881, longitude=34.183960, radius=10.0),
+            Checkpoint(latitude=28.376983, longitude=33.217163, radius=10.0),
+            Checkpoint(latitude=29.636541, longitude=32.590942, radius=10.0),
+            Checkpoint(latitude=31.300379, longitude=32.375931, radius=10.0),
+            Checkpoint(latitude=35.981561, longitude=16.638299, radius=10.0),
+            #Checkpoint(latitude=-39.438937, longitude=19.836265, radius=50.0),
+            #Checkpoint(latitude=14.881699, longitude=-21.024326, radius=50.0),
+            #Checkpoint(latitude=44.076538, longitude=-18.292936, radius=50.0),
             Checkpoint(
                 latitude=config.start.latitude,
                 longitude=config.start.longitude,
@@ -121,7 +134,7 @@ class Bot:
             # Consider slowing down if the checkpoint is close
             jump = dt * np.linalg.norm(speed)
             if dist < 2.0 * ch.radius + jump:
-                instructions.sail = min(ch.radius / jump, 1)
+                instructions.sail = 1
             else:
                 instructions.sail = 1.0
             # Check if the checkpoint has been reached
